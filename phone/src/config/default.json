@@ -1,5 +1,5 @@
 {
-  "cellProvider": "AT&T",
+  "cellProvider": "PMA",
   "defaultLanguage": "en",
   "wallpapers": [
     {
@@ -169,10 +169,10 @@
       "value": "taso-dark"
     },
     "zoom": {
-      "label": "100%",
-      "value": 1
+      "label": "80%",
+      "value": 0.8
     },
-    "streamerMode": false,
+    "streamerMode": true,
     "ringtone": {
       "label": "Pixel",
       "value": "pixel"
@@ -181,8 +181,8 @@
       "label": "Online",
       "value": "online"
     },
-    "ringtoneVol": 50,
-    "notiSoundVol": 50,
+    "ringtoneVol": 25,
+    "notiSoundVol": 25,
     "TWITTER_notiFilter": {
       "label": "All Tweets",
       "value": "all"
