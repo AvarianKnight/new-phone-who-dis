@@ -51,19 +51,6 @@ class CallsService {
     // Will be null if the player is offline
     const receivingPlayer = PlayerService.getPlayerFromIdentifier(receiverIdentifier);
 
-    callLogger.debug(`Receiving Identifier: ${receiverIdentifier}`);
-    callLogger.debug(`Receiving source: ${receivingPlayer.source} `);
-
-    const callObj: CallHistoryItem = {
-      identifier: callIdentifier,
-      transmitter: transmitterNumber,
-      transmitterSource: transmittingPlayer.source,
-      receiver: receivingNumber,
-      receiverSource: receivingPlayer.source,
-      start: startCallTimeUnix.toString(),
-      is_accepted: false,
-    };
-
     if (!receivingPlayer) {
       // TODO: handle offline player
 
@@ -74,6 +61,19 @@ class CallsService {
       });
       return;
     }
+    callLogger.debug(`Receiving Identifier: ${receiverIdentifier}`);
+    callLogger.debug(`Receiving source: ${receivingPlayer.source} `);
+
+
+    const callObj: CallHistoryItem = {
+      identifier: callIdentifier,
+      transmitter: transmitterNumber,
+      transmitterSource: transmittingPlayer.source,
+      receiver: receivingNumber,
+      receiverSource: receivingPlayer.source,
+      start: startCallTimeUnix.toString(),
+      is_accepted: false,
+    };
 
     this.setCallInMap(callObj.transmitter, callObj);
 

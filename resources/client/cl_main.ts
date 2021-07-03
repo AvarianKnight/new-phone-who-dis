@@ -7,6 +7,8 @@ import { PhotoEvents } from '../../typings/photo';
 import { CallEvents } from '../../typings/call';
 import { config } from './client';
 import { animationService } from './animations/animation.controller';
+const exp = (global as any).exports
+let PMA: Object;
 let isPhoneOpen = false;
 
 /* * * * * * * * * * * * *
@@ -18,13 +20,14 @@ function fetchOnInitialize() {
   emitNet(MessageEvents.FETCH_MESSAGE_GROUPS);
   emitNet(TwitterEvents.GET_OR_CREATE_PROFILE);
   sendMessage('PHONE', PhoneEvents.SET_CONFIG, config);
+  emit('pma:getData', (obj: Object) => PMA = obj)
 }
 
 onNet(PhoneEvents.ON_INIT, () => {
   fetchOnInitialize();
 });
 
-RegisterKeyMapping('phone', 'Open Phone', 'keyboard', 'f1');
+RegisterKeyMapping('phone', 'Open Phone', 'keyboard', 'U');
 
 const getCurrentGameTime = () => {
   let hour: string | number = GetClockHours();
@@ -45,19 +48,23 @@ const getCurrentGameTime = () => {
  * * * * * * * * * * * * */
 
 const showPhone = async (): Promise<void> => {
-  isPhoneOpen = true;
-  const time = getCurrentGameTime();
-  await animationService.openPhone(); // Animation starts before the phone is open
-  emitNet('phone:getCredentials');
-  SetCursorLocation(0.9, 0.922); //Experimental
-  sendMessage('PHONE', PhoneEvents.SET_VISIBILITY, true);
-  sendMessage('PHONE', PhoneEvents.SET_TIME, time);
-  SetNuiFocus(true, true);
-  SetNuiFocusKeepInput(true);
-  emit('npwd:disableControlActions', true);
+  // @ts-ignore
+  if (!Player(-1).state.isDead && exp['pma-lib'].CanUpdateNuiFocus(-1, true)) {
+    isPhoneOpen = true;
+    const time = getCurrentGameTime();
+    await phoneOpenAnim(); // Animation starts before the phone is open
+    emitNet('phone:getCredentials');
+    SetCursorLocation(0.9, 0.922); //Experimental
+    sendMessage('PHONE', PhoneEvents.SET_VISIBILITY, true);
+    sendMessage('PHONE', PhoneEvents.SET_TIME, time);
+    SetNuiFocus(true, true);
+    SetNuiFocusKeepInput(true);
+    emit('npwd:disableControlActions', true);
+  }
 };
 
 const hidePhone = async (): Promise<void> => {
+  exp['pma-lib'].CanUpdateNuiFocus(-1, false)
   isPhoneOpen = false;
   sendMessage('PHONE', PhoneEvents.SET_VISIBILITY, false);
   await animationService.closePhone();
@@ -98,6 +105,8 @@ RegisterCommand(
 
 async function Phone(): Promise<void> {
   if (config.PhoneAsItem) {
+    //@ts-ignore
+    if (PMA.getInventoryItem('phone').count <= 0) return;
     // TODO: Do promise callback here
     // const hasPhoneItem = await emitNetPromise('phone:hasPhoneItem')
     // if (!hasPhoneItem) return

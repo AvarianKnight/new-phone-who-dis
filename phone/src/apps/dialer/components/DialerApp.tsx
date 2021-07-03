@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppWrapper } from '../../../ui/components';
 import { AppTitle } from '../../../ui/components/AppTitle';
 import { AppContent } from '../../../ui/components/AppContent';
@@ -13,6 +13,8 @@ import { ContactList } from '../../contacts/components/List/ContactList';
 import { DialerThemeProvider } from '../providers/DialerThemeProvider';
 import { CallEvents } from '../../../../../typings/call';
 import { Box, CircularProgress } from '@material-ui/core';
+import { useNuiRequest } from 'fivem-nui-react-lib';
+import { PhoneEvents } from '../../../../../typings/phone';
 
 const LoadingSpinner: React.FC = () => (
   <Box>
@@ -22,6 +24,11 @@ const LoadingSpinner: React.FC = () => (
 
 export const DialerApp = () => {
   const history = useDialHistory();
+  const Nui = useNuiRequest();
+
+  useEffect(() => {
+    Nui.send(PhoneEvents.OPEN_APP_DAILER, {})
+  }, [])
 
   const dialer = useApp('DIALER');
   return (

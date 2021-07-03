@@ -43,6 +43,15 @@ export const DialerInput = () => {
     });
   };
 
+  
+  const handleUpdateNumber = (phoneNumber) => {
+    phoneNumber = phoneNumber.replace(/[^0-9,-]/g, '')
+    if (phoneNumber.length === 3 || phoneNumber.length === 7) {
+      phoneNumber = phoneNumber + '-'
+    }
+    set(phoneNumber)
+  } 
+
   const handleNewContact = (number: string) => {
     history.push(`/contacts/-1/?addNumber=${number}&referal=/phone/contacts`);
   };
@@ -53,7 +62,7 @@ export const DialerInput = () => {
         placeholder={t('APPS_DIALER_INPUT_PLACEHOLDER')}
         className={classes.input}
         value={inputVal}
-        onChange={(e) => set(e.target.value)}
+        onChange={(e) => handleUpdateNumber(e.target.value)}
       />
       <IconButton color="primary" className={classes.iconBtn} disabled={inputVal <= ''}>
         <PhoneIcon fontSize="large" onClick={() => handleCall(inputVal)} />
