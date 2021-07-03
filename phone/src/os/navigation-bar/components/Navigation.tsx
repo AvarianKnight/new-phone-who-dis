@@ -28,16 +28,16 @@ export const Navigation = () => {
         value();
       }}
     >
+      <BottomNavigationAction
+        label="Back"
+        value={() => !isExact && history.goBack()}
+        icon={<KeyboardArrowLeftIcon />}
+      />
       <BottomNavigationAction label="Home" value={() => history.push('/')} icon={<AppsIcon />} />
       <BottomNavigationAction
         label="Close"
         value={closePhone}
         icon={<RadioButtonUncheckedIcon />}
-      />
-      <BottomNavigationAction
-        label="Back"
-        value={() => !isExact && history.goBack()}
-        icon={<KeyboardArrowLeftIcon />}
       />
     </BottomNavigation>
   );
