@@ -164,6 +164,14 @@ const ContactsInfoPage = () => {
     });
   };
 
+  const handleUpdateNumber = (phoneNumber) => {
+    phoneNumber = phoneNumber.replace(/[^0-9,-]/g, '')
+    if (phoneNumber.length === 3 || phoneNumber.length === 7) {
+      phoneNumber = phoneNumber + '-'
+    }
+    setNumber(phoneNumber)
+  } 
+
   return (
     <Paper className={classes.root} square>
       <Button style={{ margin: 10 }} onClick={() => history.goBack()}>
@@ -185,7 +193,7 @@ const ContactsInfoPage = () => {
         <TextField
           className={classes.input}
           value={number}
-          onChange={(e) => setNumber(e.target.value)}
+          onChange={(e) => handleUpdateNumber(e.target.value)}
           label={t('APPS_CONTACT_FORM_NUMBER')}
           fullWidth
           inputProps={{
