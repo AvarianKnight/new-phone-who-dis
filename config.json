@@ -46,7 +46,7 @@
     "showNotifications": true
   },
   "debug": {
-    "level": "silly",
+    "level": "info",
     "enabled": true
   }
 }

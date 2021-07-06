@@ -1,0 +1,2 @@
+(this["webpackJsonpnpwd-nui"]=this["webpackJsonpnpwd-nui"]||[]).push([[6],{428:function(t,e,n){"use strict";n.r(e);var a=n(1),c=(n(0),n(881));e.default=function(){return Object(a.jsx)(c.a,{fontSize:"large"},void 0)}},881:function(t,e,n){"use strict";var a=n(0),c=n(36);e.a=Object(c.a)(a.createElement("path",{d:"M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"}),"Favorite")}}]);
+//# sourceMappingURL=6.4451d840.chunk.js.map

@@ -1,0 +1,2 @@
+(this["webpackJsonpnpwd-nui"]=this["webpackJsonpnpwd-nui"]||[]).push([[10],{429:function(t,e,n){"use strict";n.r(e);var c=n(1),a=(n(0),n(882));e.default=function(){return Object(c.jsx)(a.a,{fontSize:"large"},void 0)}},882:function(t,e,n){"use strict";var c=n(0),a=n(36);e.a=Object(a.a)(c.createElement("path",{d:"M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"}),"Message")}}]);
+//# sourceMappingURL=10.889f2610.chunk.js.map

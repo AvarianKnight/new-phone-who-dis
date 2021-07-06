@@ -58,7 +58,6 @@ const settingsSchema: Schema = {
     notiSoundVol: { type: 'number' },
     TWITTER_notiFilter: { $ref: '/SettingOption' },
     TWITTER_notiSound: { $ref: '/SettingOption' },
-    TWITTER_notiSoundVol: { type: 'number' },
     TWITTER_notifyNewFeedTweet: { type: 'boolean' },
   },
   required: true,
@@ -99,7 +98,6 @@ export interface IPhoneSettings {
   notiSoundVol: number;
   TWITTER_notiFilter: SettingOption<SETTING_MENTIONS | SETTINGS_ALL_TWEETS>;
   TWITTER_notiSound: SettingOption;
-  TWITTER_notiSoundVol: number;
   TWITTER_notifyNewFeedTweet: boolean;
 }
 

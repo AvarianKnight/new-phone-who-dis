@@ -4,7 +4,7 @@ import { List } from '../../../../ui/components/List';
 import Tweet from './Tweet';
 import TweetSkeletonList from './TweetSkeletonList';
 
-const MINIMUM_LOAD_TIME = 700;
+const MINIMUM_LOAD_TIME = 500;
 
 export function TweetList({ tweets }) {
   const [minimumLoadPassed, setMimimumLoadPassed] = useState(false);

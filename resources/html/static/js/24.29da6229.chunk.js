@@ -1,0 +1,2 @@
+(this["webpackJsonpnpwd-nui"]=this["webpackJsonpnpwd-nui"]||[]).push([[24],{424:function(n,t,i){"use strict";i.r(t);var e=i(1),s=(i(0),i(829));t.default=function(){return Object(e.jsx)(s.a,{fontSize:"large"},void 0)}}}]);
+//# sourceMappingURL=24.29da6229.chunk.js.map
