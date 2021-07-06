@@ -263,12 +263,12 @@ export const SettingsApp = () => {
             onClick={openMenu}
             icon={<LibraryMusic />}
           />
-          <SettingItemSlider
+          {/* <SettingItemSlider
             label={t('APPS_SETTINGS_OPTION_NOTIFICATIONVOL')}
             value={settings.TWITTER_notiSoundVol}
             onCommit={(e, val) => handleSettingChange('TWITTER_notiSoundVol', val)}
             icon={<VolumeUp />}
-          />
+          /> */}
         </List>
         <List disablePadding subheader={<SubHeaderComp text={t('SETTINGS.CATEGORY.ACTIONS')} />}>
           <SettingItem

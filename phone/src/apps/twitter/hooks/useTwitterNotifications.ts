@@ -54,7 +54,7 @@ export const useTwitterNotifications = () => {
     const notification = {
       app: 'TWITTER',
       id: NOTIFICATION_ID,
-      sound: true,
+      sound: isMentioned(currentProfileName, message),
       title: t(titleStr, { profile_name }),
       onClick: () => history.push('/twitter'),
       content: message,
