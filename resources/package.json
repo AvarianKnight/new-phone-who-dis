@@ -33,7 +33,7 @@
     "@citizenfx/client": "^2.0.4170-1",
     "@citizenfx/server": "^2.0.4167-1",
     "@types/jest": "^26.0.14",
-    "@types/md5": "^2.2.1",
+    "@types/md5": "^2.3.1",
     "@types/node": "^14.11.10",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
