@@ -2,7 +2,7 @@
   "Locale": "en",
   "KeyTogglePhone": 288,
   "KeyTakeCall": 38,
-  "PhoneAsItem": false,
+  "PhoneAsItem": true,
   "SwimDestroy": false,
   "RunRate": 10,
   "DestroyChance": 100,
@@ -21,9 +21,9 @@
     "identifierColumn": "id"
   },
   "images": {
-    "isCustomImageServer": false,
-    "url": "https://api.imgur.com/3/image",
-    "type": "imgur"
+    "isCustomImageServer": true,
+    "url": "https://i.pmarp.com/upload",
+    "type": "files[]"
   },
   "twitter": {
     "showNotifications": true,
