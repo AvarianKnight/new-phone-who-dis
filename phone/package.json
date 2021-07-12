@@ -6,7 +6,7 @@
   "license": "CC-BY-NC-SA-4.0",
   "homepage": "/resources/html",
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
+    "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@sentry/react": "^5.29.2",
